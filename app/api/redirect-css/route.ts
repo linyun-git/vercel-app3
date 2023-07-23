@@ -19,7 +19,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
             f-ip: ${req.headers.get('x-forwarded-for')}
             ua: ${req.headers.get('user-agent')}
         `);
-        return NextResponse.redirect(`${REDIRECTED}&mail_id=${mailId}&css_id=${cssId}`);
+        return NextResponse.redirect(`${REDIRECTED}&css_id=${cssId}&${searchParams.toString()}`);
     }
 
     const cssId = searchParams.get('css_id');

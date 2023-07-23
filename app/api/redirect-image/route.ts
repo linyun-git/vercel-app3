@@ -22,7 +22,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
             f-ip: ${req.headers.get('x-forwarded-for')}
             ua: ${req.headers.get('user-agent')}
         `);
-        return NextResponse.redirect(`${REDIRECTED}&from=${pos}&mail_id=${mailId}&image_id=${imageId}${cssId ? `&css_id=${cssId}` : ''}`);
+        return NextResponse.redirect(`${REDIRECTED}&image_id=${imageId}&${searchParams.toString()}`);
     }
 
     const imageId = searchParams.get('image_id');
