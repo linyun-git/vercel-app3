@@ -2,6 +2,7 @@ import { NextResponse, NextRequest } from "next/server"
 
 const RANDOM_IMG = 'https://app3.suitesting.dev/api/random-image?from=css';
 const REDIRECT_JPG = 'https://app3.suitesting.dev/api/redirect-image?from=css';
+const GIF = 'https://app3.suitesting.dev/api/img-gif?from=css';
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
 
@@ -25,6 +26,11 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     }
     .redirect-img {
         background-image: url('${REDIRECT_JPG}&mail_id=${mailId}&css_id=${cssId}');
+    }
+    .gif-img {
+        background-image: url('${GIF}&mail_id=${mailId}&css_id=${cssId}');
+        width: 600px;
+        height: 441px;
     }
     .border {
         border: 2px solid blue;
